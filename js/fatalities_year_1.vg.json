@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/YearStateFatalitiesFatalCrashes.csv"
+  },
+  "hconcat": [
+    {
+      "width": "container",
+      "height": "container",
+      "title": "Queensland",
+      "mark": {"type": "bar"},
+      "transform": [{"filter": "datum.State == 'Qld'"}],
+      "encoding": {
+        "x": {
+          "timeUnit": "year",
+          "field": "Year",
+          "type": "nominal",
+          "title": "Year"
+        },
+        "y": {"field": "Fatalities", "aggregate": "sum"},
+        "color": {"value": "#DF3B57"}
+      }
+    },
+    {
+      "width": "container",
+      "height": "container",
+      "title": "New South Wales",
+      "mark": {"type": "bar"},
+      "transform": [{"filter": "datum.State == 'NSW'"}],
+      "encoding": {
+        "x": {
+          "timeUnit": "year",
+          "field": "Year",
+          "type": "nominal",
+          "title": "Year"
+        },
+        "y": {"field": "Fatalities", "aggregate": "sum"},
+        "color": {"value": "#DF3B57"}
+      }
+    },
+    {
+      "width": "container",
+      "height": "container",
+      "title": "Victoria",
+      "mark": {"type": "bar"},
+      "transform": [{"filter": "datum.State == 'Vic'"}],
+      "encoding": {
+        "x": {
+          "timeUnit": "year",
+          "field": "Year",
+          "type": "nominal",
+          "title": "Year"
+        },
+        "y": {"field": "Fatalities", "aggregate": "sum"},
+        "color": {"value": "#DF3B57"}
+      }
+    },
+    {
+      "width": "container",
+      "height": "container",
+      "title": "Tasmania",
+      "mark": {"type": "bar"},
+      "transform": [{"filter": "datum.State == 'Tas'"}],
+      "encoding": {
+        "x": {
+          "timeUnit": "year",
+          "field": "Year",
+          "type": "nominal",
+          "title": "Year"
+        },
+        "y": {"field": "Fatalities", "aggregate": "sum"},
+        "color": {"value": "#DF3B57"}
+      }
+    }
+  ],
+  "config": {}
+}
