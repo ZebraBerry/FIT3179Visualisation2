@@ -11,7 +11,7 @@
       "lookup": "properties.LGA_NAME23",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/DataFatalCrashesNormalisedByPopLGA.csv"
+          "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/FatalCrashesNormalisedByPopLGA.csv"
         },
         "key": "Local Government Area",
         "fields": ["count Crash ID"]
