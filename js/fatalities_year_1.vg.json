@@ -17,7 +17,7 @@
           "type": "nominal",
           "title": "Year"
         },
-        "y": {"field": "Fatalities", "aggregate": "sum"},
+        "y": {"field": "Fatalities", "aggregate": "sum", "title": "Fatalities"},
         "color": {"value": "#DF3B57"}
       }
     },
@@ -34,7 +34,7 @@
           "type": "nominal",
           "title": "Year"
         },
-        "y": {"field": "Fatalities", "aggregate": "sum"},
+        "y": {"field": "Fatalities", "aggregate": "sum", "title": "Fatalities"},
         "color": {"value": "#DF3B57"}
       }
     },
@@ -51,7 +51,7 @@
           "type": "nominal",
           "title": "Year"
         },
-        "y": {"field": "Fatalities", "aggregate": "sum"},
+        "y": {"field": "Fatalities", "aggregate": "sum", "title": "Fatalities"},
         "color": {"value": "#DF3B57"}
       }
     },
@@ -68,7 +68,7 @@
           "type": "nominal",
           "title": "Year"
         },
-        "y": {"field": "Fatalities", "aggregate": "sum"},
+        "y": {"field": "Fatalities", "aggregate": "sum", "title": "Fatalities"},
         "color": {"value": "#DF3B57"}
       }
     }
