@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 700,
-  "height": 500,
+  "width": "container"
   "data": {
     "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/map/VIC.json",
     "format": {"type": "topojson", "feature": "LGA_2023_AUST_GDA2020"}
