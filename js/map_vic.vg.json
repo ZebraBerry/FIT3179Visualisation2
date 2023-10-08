@@ -3,7 +3,7 @@
   "width": 700,
   "height": 500,
   "data": {
-    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/MapVIC.json",
+    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/map/VIC.json",
     "format": {"type": "topojson", "feature": "LGA_2023_AUST_GDA2020"}
   },
   "transform": [
