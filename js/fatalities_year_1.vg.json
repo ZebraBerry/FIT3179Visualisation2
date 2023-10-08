@@ -5,8 +5,6 @@
   },
   "hconcat": [
     {
-      "width": "container",
-      "height": "container",
       "title": "Queensland",
       "mark": {"type": "bar"},
       "transform": [{"filter": "datum.State == 'Qld'"}],
@@ -22,8 +20,6 @@
       }
     },
     {
-      "width": "container",
-      "height": "container",
       "title": "New South Wales",
       "mark": {"type": "bar"},
       "transform": [{"filter": "datum.State == 'NSW'"}],
@@ -39,8 +35,6 @@
       }
     },
     {
-      "width": "container",
-      "height": "container",
       "title": "Victoria",
       "mark": {"type": "bar"},
       "transform": [{"filter": "datum.State == 'Vic'"}],
@@ -56,8 +50,6 @@
       }
     },
     {
-      "width": "container",
-      "height": "container",
       "title": "Tasmania",
       "mark": {"type": "bar"},
       "transform": [{"filter": "datum.State == 'Tas'"}],
