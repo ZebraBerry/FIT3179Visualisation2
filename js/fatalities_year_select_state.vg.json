@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": "container",
+  "width": "375",
+  "height": "200",
   "title": {
     "text": "Fatalities",
     "anchor": "middle",
