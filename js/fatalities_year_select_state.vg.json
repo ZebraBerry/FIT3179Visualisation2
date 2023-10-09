@@ -5,6 +5,7 @@
     "anchor": "middle",
     "fontSize": 20
   },
+  "width": "container",
   "data": {"url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/YearStateFatalitiesFatalCrashes.csv"
   }
   ,
