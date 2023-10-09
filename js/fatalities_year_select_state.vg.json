@@ -46,7 +46,10 @@
         "opacity": {
           "condition": {"param": "pts", "value": 1},
           "value": 0.05
-        }
+        },
+        "tooltip": [
+      {"field": "Year", "type": "nominal", "timeUnit": "year", "title": "Year"},
+      {"field": "Fatalities", "aggregate":"sum", "title": "Fatalities"}]
       }
     },
     {
