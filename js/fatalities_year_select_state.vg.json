@@ -1,7 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "375",
-  "height": "200",
   "title": {
     "text": "Fatalities",
     "anchor": "middle",
@@ -11,7 +9,7 @@
   }
   ,
   "hconcat": [
-    { "mark": "bar",
+    { "mark": "bar",  "width": "container","height":"container",
       "transform": [
         {"filter": {"param": "pts"}},
         {
