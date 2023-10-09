@@ -114,8 +114,9 @@
 
   <script type="text/javascript">
     var specVis1 = "./js/fatalities_year_select_state.vg.json";
-    var specVis2 = "./js/fatalities_year_1.vg.json";
-    var specVis3 = "./js/map_vic.vg.json";
+    var specVis2 = "./js/day_time_fatal_crashes_heatmap.vg.json";
+    var specVisX = "./js/fatalities_year_1.vg.json";
+    var specVisY = "./js/map_vic.vg.json";
     
 
     vegaEmbed('#vis1', specVis1, { "actions": false });
@@ -124,14 +125,14 @@
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis3', specVisX, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    vegaEmbed('#vis4', specVis3, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis4', specVisY, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
-    vegaEmbed('#vis5', specVis3, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis5', specVisY, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>
