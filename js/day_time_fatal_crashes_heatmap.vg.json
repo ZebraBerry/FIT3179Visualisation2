@@ -57,6 +57,11 @@
         "Friday",
         "Saturday"
       ]
-    }
+    },
+    "tooltip": [
+          {"field": "Dayweek", "title": "Day Of Week"},
+      {"field": "Time"},
+      {"field": "Fatal Crashes", "aggregate":"sum", "title": "Fatal Crashes"}
+      ]
   }
 }
