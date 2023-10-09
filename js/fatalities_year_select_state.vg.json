@@ -9,7 +9,7 @@
   }
   ,
   "hconcat": [
-    { "width": "container","height": "container","mark": "bar",
+    { "mark": "bar",
       "transform": [
         {"filter": {"param": "pts"}},
         {
