@@ -5,11 +5,12 @@
     "anchor": "middle",
     "fontSize": 20
   },
+  
   "data": {"url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/YearStateFatalitiesFatalCrashes.csv"
   }
   ,
   "hconcat": [
-    { "mark": "bar",  "width": "container","height":"container",
+    { "mark": "bar", "width":350,"height":300,
       "transform": [
         {"filter": {"param": "pts"}},
         {
@@ -59,6 +60,8 @@
         "name": "pts",
         "select": {"type": "point", "encodings": ["y"]}
       }],
+      "width": 25,
+      "height": 200,
       "mark": {"type": "bar"},
       "encoding": {
         "y": {
