@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
   "title": {
     "text": "Fatalities",
     "anchor": "middle",
     "fontSize": 20
   },
-  "width": "container",
   "data": {"url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/YearStateFatalitiesFatalCrashes.csv"
   }
   ,
