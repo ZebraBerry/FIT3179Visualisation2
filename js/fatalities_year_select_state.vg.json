@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Chart Title",
+    "text": "Fatalities",
     "anchor": "middle",
-    "fontSize": 14
+    "fontSize": 20
   },
   "data": {"url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/YearStateFatalitiesFatalCrashes.csv"
   }
@@ -21,10 +21,10 @@
         "x": {
           "timeUnit": "year",
           "field": "Year",
-          "title": "Month Year",
+          "title": "Year",
           "type": "ordinal"
         },
-        "y": {"field": "Fatalities", "type": "quantitative", "aggregate": "sum", "axis": {"grid": true}},
+        "y": {"field": "Fatalities", "type": "quantitative", "aggregate": "sum", "title": "Fatalities","axis": {"grid": true}},
         "color": {
           "field": "State",
           "type": "nominal",
@@ -48,8 +48,10 @@
           "value": 0.05
         },
         "tooltip": [
+          {"field": "State"},
       {"field": "Year", "type": "nominal", "timeUnit": "year", "title": "Year"},
-      {"field": "Fatalities", "aggregate":"sum", "title": "Fatalities"}]
+      {"field": "Fatalities", "aggregate":"sum", "title": "Fatalities"}
+      ]
       }
     },
     {
@@ -80,7 +82,7 @@
         "color": {"field": "State","type": "nominal"},
         "opacity": {
           "condition": {"param": "pts", "value": 1},
-          "value": 0.02
+          "value": 0
         }
       }
     }
