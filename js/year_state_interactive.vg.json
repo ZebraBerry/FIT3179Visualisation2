@@ -16,7 +16,7 @@
           "type": "ordinal"
         },
         "y": {
-          "field": "Number Fatalities",
+          "field": "Fatalities",
           "type": "quantitative",
           "aggregate": "sum",
           "title": "Fatalities",
@@ -41,7 +41,7 @@
             "title": "Year"
           },
           {
-            "field": "Number Fatalities",
+            "field": "Fatalities",
             "aggregate": "sum",
             "title": "Fatalities"
           }
