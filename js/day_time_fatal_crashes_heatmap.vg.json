@@ -42,7 +42,11 @@
       "aggregate": "sum",
       "field": "Fatal Crashes",
       "type": "quantitative",
-      "title": "Fatal Crashes"
+      "title": "Fatal Crashes",
+      "scale": {
+            "scheme": "purpleorange"
+      }
+      
     },
     "y": {
       "field": "Dayweek",
@@ -63,5 +67,8 @@
       {"field": "Time"},
       {"field": "Fatal Crashes", "aggregate":"sum", "title": "Fatal Crashes"}
       ]
-  }
+  
+  },
+  "background": "antiquewhite"
+
 }
