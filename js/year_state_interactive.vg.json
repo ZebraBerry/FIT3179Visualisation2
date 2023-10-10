@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
+  },
+  "hconcat": [
+    {
+      "mark": "bar",
+      "width": 270,
+      "height": 300,
+      "encoding": {
+        "x": {
+          "timeUnit": "year",
+          "field": "Date",
+          "title": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Number Fatalities",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "title": "Fatalities",
+          "axis": {"grid": true}
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "scale": {
+            "scheme": "category20b",
+            "domain": ["NSW & ACT", "NT", "Qld", "SA", "Tas", "Vic", "WA"]
+          }
+        },
+        "order": {"field": "stateOrder"},
+        "opacity": {"condition": {"param": "pts", "value": 1}, "value": 0.05},
+        "tooltip": [
+          {"field": "State"},
+          {
+            "field": "Date",
+            "type": "nominal",
+            "timeUnit": "year",
+            "title": "Year"
+          },
+          {
+            "field": "Number Fatalities",
+            "aggregate": "sum",
+            "title": "Fatalities"
+          }
+        ]
+      },
+      "transform": [
+        {"filter": {"param": "pts"}},
+        {
+          "calculate": "if(datum.State === 'NSW & ACT', 0, if(datum.State === 'Vic', 1, if(datum.State === 'Qld', 2, if(datum.State === 'WA', 3, if(datum.State === 'SA', 4, if(datum.State === 'NT', 5, if(datum.State === 'Tas', 6, 7)))))))",
+          "as": "stateOrder"
+        }
+      ]
+    },
+    {
+      "params": [
+        {"name": "pts", "select": {"type": "point", "encodings": ["y"]}}
+      ],
+      "width": 25,
+      "height": 200,
+      "mark": {"type": "bar"},
+      "encoding": {
+        "y": {
+          "type": "ordinal",
+          "field": "State",
+          "title": "State",
+          "scale": {
+            "scheme": "category20b",
+            "domain": ["NSW & ACT", "NT", "Qld", "SA", "Tas", "Vic", "WA"]
+          }
+        },
+        "color": {"field": "State", "type": "nominal"},
+        "opacity": {"condition": {"param": "pts", "value": 1}, "value": 0}
+      }
+    }
+  ],
+  "config": {
+    "legend": {"disable": true},
+    "axisYBand": {
+      "titleAngle": 0,
+      "titleX": -50,
+      "titleY": -10,
+      "titleAlign": "left"
+    }
+  },
+  "background": "lightgrey"
+}
