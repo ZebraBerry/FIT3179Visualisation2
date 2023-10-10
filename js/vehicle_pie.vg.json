@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
+  },
+
+  "hconcat":[
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {"aggregate":"count", "type": "quantitative"},
+        "color": {"field": "Bus Involvement", "type": "nominal"}
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {"aggregate":"count", "type": "quantitative"},
+        "color": {"field": "Heavy Rigid Truck Involvement", "type": "nominal"}
+      }
+    },
+        {
+      "mark": "arc",
+      "encoding": {
+        "theta": {"aggregate":"count", "type": "quantitative"},
+        "color": {"field": "Articulated Truck Involvement", "type": "nominal", "scale": {"range": ["#E54B4B", "#EEF1EF", "#32936F"]}}
+      }
+    },
+  ]
+
+  
+  
+}
