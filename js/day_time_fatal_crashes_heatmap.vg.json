@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": "250",
+  "height": 250,
+  "width": 850,
   "data": {
     "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/DayTimeFatalCrashes.csv"
   },
