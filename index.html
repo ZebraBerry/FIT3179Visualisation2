@@ -93,6 +93,15 @@
       </div>
     </div>
     <!-- end pure grid group -->
+
+        <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <P>Text to be inserted</P>
+        <div id="vis6" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
     
   </div> <!-- end page -->
 
@@ -102,6 +111,7 @@
     var specVis3 = "./js/map_aus_v2.vg.json";
     var specVis4 = "./js/gender_age_bin_line.vg.json";
     var specVis5 = "./js/gender_age_bin_pyramid.vg.json";
+    var specVis6 = "./js/vehicle_pie.vg.json";
     
 
   vegaEmbed('#vis1', specVis1).then(function(result) {
@@ -121,6 +131,10 @@
     }).catch(console.error);
 
     vegaEmbed('#vis5', specVis5).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis6', specVis6).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     
