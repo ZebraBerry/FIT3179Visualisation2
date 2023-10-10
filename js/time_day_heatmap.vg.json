@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 250,
+  "width": 675,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
+  },
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "ordinal",
+      "title": "Time",
+      "timeUnit": "hoursminutes"
+    },
+    "color": {
+      "aggregate": "sum",
+      "field": "Number Fatalities",
+      "type": "quantitative",
+      "title": "Fatalities",
+      "scale": {
+            "scheme": "purpleorange"
+      }
+      
+    },
+    "y": {
+      "field": "Day",
+      "type": "ordinal",
+      "title": "Day Of Week",
+      "sort": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ]
+    },
+    "tooltip": [
+          {"field": "Day", "title": "Day Of Week"},
+      {"field": "Date", "timeUnit": "hoursminutes", "title":"Time"},
+      {"field": "Number Fatalities", "aggregate":"sum", "title": "Fatalities"}
+      ]
+  
+  },
+  "background": "lightgray"
+
+}
