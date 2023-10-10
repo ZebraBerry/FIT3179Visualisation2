@@ -8,11 +8,13 @@
   "transform": [
     {"filter": "datum.Gender !== 'Unknown' & datum.Age !== 'Unknown'"}
   ],
+  "vconcat": [{
+    "width": "container",
   "layer": [
     {
       "mark": "line",
       "encoding": {
-        "x": {"field": "Age", "type": "quantitative"},
+        "x": {"field": "Age", "type": "quantitative", "scale": {"domain": [0, 100]}},
         "y": {"aggregate": "count", "type": "quantitative"},
         "color": {"field": "Gender", "type": "nominal"}
       }
@@ -25,5 +27,16 @@
         "color": {"field": "Gender", "type": "nominal"}
       }
     }
+  ]},
+  {
+    "width": "container",
+    "height": 50,
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Age", "type": "quantitative", "scale": {"domain": [0, 100]}},
+    "y": {"aggregate": "count", "type": "quantitative", "stack":  "normalize"},
+    "color": {"field": "Gender"}
+  }
+  }
   ]
 }
