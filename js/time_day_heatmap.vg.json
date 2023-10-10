@@ -15,7 +15,7 @@
     },
     "color": {
       "aggregate": "sum",
-      "field": "Number Fatalities",
+      "field": "Fatalities",
       "type": "quantitative",
       "title": "Fatalities",
       "scale": {
@@ -40,7 +40,7 @@
     "tooltip": [
           {"field": "Day", "title": "Day Of Week"},
       {"field": "Date", "timeUnit": "hoursminutes", "title":"Time"},
-      {"field": "Number Fatalities", "aggregate":"sum", "title": "Fatalities"}
+      {"field": "Fatalities", "aggregate":"sum", "title": "Fatalities"}
       ]
   
   },
