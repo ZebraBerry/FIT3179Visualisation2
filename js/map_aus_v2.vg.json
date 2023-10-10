@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 400,
+  "width": 800,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/map/Australia.json",
+    "format": {"type": "topojson", "feature": "LGA_2023_AUST_GDA2020"}
+  },
+  "projection": {
+    "parallels": [-16, -37],
+    "rotate": [-134, 0, 0],
+    "type": "conicEqualArea"
+  },
+  "layer":[
+    {
+      "transform": [
+        {
+          "calculate": "'Data is not available for ' + datum.properties.LGA_NAME23",
+          "as": "note"
+        }
+      ],
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {"tooltip": {"field": "note"}}
+    },
+
+    {
+      "transform": [
+        {
+          "lookup": "properties.LGA_NAME23",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
+            },
+            "key": "National LGA Name 2021",
+            "fields": ["Fatalities"]
+            
+          }
+        },
+        {
+          "lookup": "properties.LGA_NAME23",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/lga%20population.csv"
+            },
+            "key": "Local Government Area",
+            "fields": ["Population"]
+          }
+        }
+        ,
+        {
+          "calculate": "datum.Fatalities/datum.Population * 10000",
+          "as": "Confirmed per 10,000 population"
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "white"},
+      "encoding": {
+        "color": {
+          "field": "Confirmed per 10,000 population",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "properties.LGA_NAME23", "type": "nominal", "title": "LGA"},
+          {"field": "Fatalities", "type": "quantitative"},
+          {
+            "field": "Confirmed per 10,000 population",
+            "type": "quantitative",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {}
+}
