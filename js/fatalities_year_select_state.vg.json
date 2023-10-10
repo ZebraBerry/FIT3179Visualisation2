@@ -30,7 +30,7 @@
           "field": "State",
           "type": "nominal",
           "scale": {
-            "scheme": "category20",
+            "scheme": "category20b",
             "domain": [
               "ACT",
           "NSW",
@@ -69,7 +69,7 @@
           "field": "State",
           "title": "State",
           "scale": {
-            "scheme": "category20",
+            "scheme": "category20b",
             "domain": [
               "ACT",
               "NSW",
