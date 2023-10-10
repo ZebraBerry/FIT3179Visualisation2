@@ -1,0 +1,13 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "National Remoteness Areas", "type": "ordinal"},
+    "y": {"aggregate": "count", "type": "quantitative", "stack":  "normalize"},
+    "xOffset": {"field": "group"},
+    "color": {"field": "National Road Type"}
+  }
+}
