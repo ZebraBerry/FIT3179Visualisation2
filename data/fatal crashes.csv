@@ -1,5 +1,4 @@
-Crash ID,State,Date,Day,Crash Type,Number Fatalities,"Bus 
-Involvement",Heavy Rigid Truck Involvement,Articulated Truck Involvement,Speed Limit,National Remoteness Areas,National LGA Name 2021,National Road Type,Christmas Period,Easter Period,Day of week,Time of Day
+Crash ID,State,Date,Day,Crash Type,Number Fatalities,Bus Involvement,Heavy Rigid Truck Involvement,Articulated Truck Involvement,Speed Limit,National Remoteness Areas,National LGA Name 2021,National Road Type,Christmas Period,Easter Period,Day of week,Time of Day
 20221116,NSW & ACT,12-1-2022 15:00,Friday,Single,1,No,No,No,40,Major Cities of Australia,Canterbury-Bankstown,Local Road,Yes,No,Weekday,Day
 20221162,NSW & ACT,12-1-2022 22:00,Friday,Single,1,No,No,No,60,Inner Regional Australia,Greater Hume,Access Road,No,No,Weekend,Night
 20221034,NSW & ACT,12-1-2022 12:00,Tuesday,Multiple,1,No,No,No,100,Inner Regional Australia,Wagga Wagga,National or State Highway,Yes,No,Weekday,Day
