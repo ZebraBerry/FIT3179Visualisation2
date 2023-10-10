@@ -60,7 +60,7 @@
         "name": "pts",
         "select": {"type": "point", "encodings": ["y"]}
       }],
-      "width": 25,
+      "width": 35,
       "height": 200,
       "mark": {"type": "bar"},
       "encoding": {
@@ -94,5 +94,6 @@
     "legend": {"disable": true},
     "axisYBand": {"titleAngle": 0, "titleX": -50, "titleY": -10, "titleAlign": "left"}
 
-  }
+  },
+  "background":"antiquewhite"
 }
