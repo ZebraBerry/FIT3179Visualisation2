@@ -1,10 +1,36 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {
-    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
-  },
   "hconcat": [
     {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
+      },
+      "params": [
+        {"name": "pts", "select": {"type": "point", "encodings": ["y"]}}
+      ],
+      "width": 25,
+      "height": 200,
+      "mark": {"type": "bar"},
+      "encoding": {
+        "y": {
+          "type": "ordinal",
+          "field": "State",
+          "title": null,
+          "scale": {
+            "scheme": "category20b",
+            "domain": ["NSW & ACT", "NT", "Qld", "SA", "Tas", "Vic", "WA"]
+          }
+        },
+        "color": {"field": "State", "type": "nominal"},
+        "opacity": {"condition": {"param": "pts", "value": 1}, "value": 0}
+      },
+      "title": {"text": "Selected States", "anchor": "left"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
+      },
+      "title": "Fatalities",
       "mark": "bar",
       "width": 270,
       "height": 300,
@@ -33,18 +59,14 @@
         "order": {"field": "stateOrder"},
         "opacity": {"condition": {"param": "pts", "value": 1}, "value": 0.05},
         "tooltip": [
-          {"field": "State"},
           {
             "field": "Date",
             "type": "nominal",
             "timeUnit": "year",
             "title": "Year"
           },
-          {
-            "field": "Fatalities",
-            "aggregate": "sum",
-            "title": "Fatalities"
-          }
+          {"field": "State"},
+          {"field": "Fatalities", "aggregate": "sum", "title": "Fatalities"}
         ]
       },
       "transform": [
@@ -56,25 +78,60 @@
       ]
     },
     {
-      "params": [
-        {"name": "pts", "select": {"type": "point", "encodings": ["y"]}}
-      ],
-      "width": 25,
-      "height": 200,
-      "mark": {"type": "bar"},
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/normalised%20fatality%20rate.csv"
+      },
+      "mark": "bar",
+      "width": 270,
+      "height": 300,
+      "title": "Fatalities Per 100,000 People",
       "encoding": {
+        "x": {
+          "timeUnit": "year",
+          "field": "Year",
+          "title": "Year",
+          "type": "ordinal"
+        },
         "y": {
-          "type": "ordinal",
+          "field": "Fatalities Per 100,000",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "title": "Fatality Rate",
+          "axis": {"grid": true}
+        },
+        "color": {
           "field": "State",
-          "title": "State",
+          "type": "nominal",
           "scale": {
             "scheme": "category20b",
             "domain": ["NSW & ACT", "NT", "Qld", "SA", "Tas", "Vic", "WA"]
           }
         },
-        "color": {"field": "State", "type": "nominal"},
-        "opacity": {"condition": {"param": "pts", "value": 1}, "value": 0}
-      }
+        "order": {"field": "stateOrder"},
+        "opacity": {"condition": {"param": "pts", "value": 1}, "value": 0.05},
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "nominal",
+            "timeUnit": "year",
+            "title": "Year"
+          },
+          {"field": "State"},
+          {"field": "Population", "title": "Population", "format": ","},
+          {
+            "field": "Fatalities Per 100,000",
+            "title": "Fatality Rate",
+            "format": ".2f"
+          }
+        ]
+      },
+      "transform": [
+        {"filter": {"param": "pts"}},
+        {
+          "calculate": "if(datum.State === 'NSW & ACT', 0, if(datum.State === 'Vic', 1, if(datum.State === 'Qld', 2, if(datum.State === 'WA', 3, if(datum.State === 'SA', 4, if(datum.State === 'NT', 5, if(datum.State === 'Tas', 6, 7)))))))",
+          "as": "stateOrder"
+        }
+      ]
     }
   ],
   "config": {
