@@ -24,7 +24,7 @@
         "color": {"field": "State", "type": "nominal"},
         "opacity": {"condition": {"param": "pts", "value": 1}, "value": 0}
       },
-      "title": {"text": "Selected States", "anchor": "left"}
+      "title": {"text": "Selected States", "anchor": "start"}
     },
     {
       "data": {
