@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "height": 300,
-  "width": "650",
+  "width": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
   },
@@ -18,7 +18,7 @@
       "field": "Fatalities",
       "type": "quantitative",
       "title": "Fatalities",
-      "scale": {"scheme": "darkred"}
+      "scale": {"scheme": "purplegreen"}
     },
     "y": {
       "field": "Day",
