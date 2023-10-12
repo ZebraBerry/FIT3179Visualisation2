@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A trellis bar chart showing the US population distribution of age groups and gender in 2000.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatalities.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"aggregate": "count", "title": "Fatalities"},
+    "y": {
+      "field": "Road User",
+      "sort": [
+        "Driver",
+        "Motorcycle rider",
+        "Passenger",
+        "Pedestrian",
+        "Pedal cyclist"
+      ]
+    },
+    "color": {
+      "field": "Crash Type",
+      "scale": {"range": ["#ABCDEF", "#123456"]},
+      "title": "Crash Fatalities"
+    },
+    "tooltip": null
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "Road User",
+        "oneOf": [
+          "Driver",
+          "Motorcycle rider",
+          "Passenger",
+          "Pedestrian",
+          "Pedal cyclist"
+        ]
+      }
+    }
+  ]
+}
