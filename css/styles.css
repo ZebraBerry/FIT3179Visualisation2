@@ -10,6 +10,7 @@ h1 {
 h2 {
     border-left-style: solid;
     border-width: medium;
+    padding: 20px;
 }
 
 body {
