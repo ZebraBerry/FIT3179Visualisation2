@@ -5,31 +5,6 @@
       "data": {
         "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
       },
-      "params": [
-        {"name": "pts", "select": {"type": "point", "encodings": ["y"]}}
-      ],
-      "width": 25,
-      "height": 200,
-      "mark": {"type": "bar"},
-      "encoding": {
-        "y": {
-          "type": "ordinal",
-          "field": "State",
-          "title": null,
-          "scale": {
-            "scheme": "category20b",
-            "domain": ["NSW & ACT", "NT", "Qld", "SA", "Tas", "Vic", "WA"]
-          }
-        },
-        "color": {"field": "State", "type": "nominal"},
-        "opacity": {"condition": {"param": "pts", "value": 1}, "value": 0}
-      },
-      "title": {"text": "Selected States", "anchor": "start"}
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
-      },
       "title": "Fatalities",
       "mark": "bar",
       "width": 360,
@@ -52,7 +27,7 @@
           "field": "State",
           "type": "nominal",
           "scale": {
-            "scheme": "category20b",
+            "scheme": "purplegreen",
             "domain": ["NSW & ACT", "NT", "Qld", "SA", "Tas", "Vic", "WA"]
           }
         },
@@ -76,6 +51,31 @@
           "as": "stateOrder"
         }
       ]
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatal%20crashes.csv"
+      },
+      "params": [
+        {"name": "pts", "select": {"type": "point", "encodings": ["y"]}}
+      ],
+      "width": 25,
+      "height": 200,
+      "mark": {"type": "bar"},
+      "encoding": {
+        "y": {
+          "type": "ordinal",
+          "field": "State",
+          "title": null,
+          "scale": {
+            "scheme": "purplegreen",
+            "domain": ["NSW & ACT", "NT", "Qld", "SA", "Tas", "Vic", "WA"]
+          }
+        },
+        "color": {"field": "State", "type": "nominal"},
+        "opacity": {"condition": {"param": "pts", "value": 1}, "value": 0}
+      },
+      "title": {"text": "Selected States", "anchor": "start"}
     },
     {
       "data": {
@@ -103,7 +103,7 @@
           "field": "State",
           "type": "nominal",
           "scale": {
-            "scheme": "category20b",
+            "scheme": "purplegreen",
             "domain": ["NSW & ACT", "NT", "Qld", "SA", "Tas", "Vic", "WA"]
           }
         },
