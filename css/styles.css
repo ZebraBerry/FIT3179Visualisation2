@@ -7,6 +7,11 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    border-left-style: solid;
+    border-width: medium;
+}
+
 body {
     background-color: #47624F;
 }
