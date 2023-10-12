@@ -32,8 +32,8 @@
       },
       "title": "Fatalities",
       "mark": "bar",
-      "width": "300",
-      "height": 400,
+      "width": 360,
+      "height": 360,
       "encoding": {
         "x": {
           "timeUnit": "year",
@@ -82,8 +82,8 @@
         "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/normalised%20fatality%20rate.csv"
       },
       "mark": "bar",
-      "width": "300",
-      "height": 400,
+      "width": 360,
+      "height": 360,
       "title": "Fatalities Per 100,000 People",
       "encoding": {
         "x": {
@@ -142,6 +142,5 @@
       "titleY": -10,
       "titleAlign": "left"
     }
-  },
-  "background": "lightgrey"
+  }
 }
