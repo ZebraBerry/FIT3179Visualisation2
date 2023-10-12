@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatalities.csv"
+  },
+  "width": 500,
+  "height": 300,
+  "transform": [
+    {"filter": "datum.Gender !== 'Unknown' & datum.Age !== 'Unknown'"}
+  ],
+  "layer": [
+    {
+      "mark": {
+    "type": "line",
+    "strokeCap": "round"
+      },
+      "encoding": {
+        "x": {"field": "Age", "type": "quantitative", "scale": {"domain": [0, 100]}},
+        "y": {"aggregate": "count", "type": "quantitative", "stack": true, "title": "Fatalities"},
+        "color": {"field": "Gender", "type": "nominal", "scale": {"range": ["#F37748", "#067BC2"]}}
+      }
+    },
+    {
+      "mark": {"type": "area", "opacity": 0.25, "filled": true},
+      "encoding": {
+        "x": {"field": "Age", "type": "quantitative"},
+        "y": {"aggregate": "count", "type": "quantitative"},
+        "color": {"field": "Gender", "type": "nominal", "legend": {"symbolOpacity": 1}},
+        "tooltip": [
+          {"field": "Gender"},
+          {"field": "Age"},
+          {"aggregate": "count", "title": "Fatalities"}
+        ]
+      }
+    }
+    ,
+    {
+      "mark": {"type": "point", "size": 10, "filled": false},
+      "encoding": {
+        "x": {"field": "Age", "type": "quantitative"},
+        "y": {"aggregate": "count", "type": "quantitative", "stack": true},
+        "color": {"field": "Gender", "type": "nominal"},
+        "tooltip": [
+          {"field": "Gender"},
+          {"field": "Age"},
+          {"aggregate": "count", "title": "Fatalities"}
+        ]
+      }
+    }
+  ]
+}
+
