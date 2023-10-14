@@ -8,7 +8,7 @@
   },
   "mark": "bar",
   "encoding": {
-    "x": {"aggregate": "count", "title": "Fatalities"},
+    "x": {"aggregate": "count", "title": "Fatalities", "scale":{"domain": [0,4500], ""}},
     "y": {
       "field": "Road User",
       "sort": [
@@ -21,10 +21,16 @@
     },
     "color": {
       "field": "Crash Type",
-      "scale": {"range": ["#ABCDEF", "#123456"]},
+      "sort": ["Single", "Multiple"],
+      "scale": {"range": ["#773885", "#4D9F5A"]},
       "title": "Crash Fatalities"
     },
-    "tooltip": null
+    "tooltip": [
+      {"field": "Crash Type"},
+            {"field": "Road User"},
+      {"aggregate": "count", "title": "Fatalities"}
+
+    ]
   },
   "transform": [
     {
