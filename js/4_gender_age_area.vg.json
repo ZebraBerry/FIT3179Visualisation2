@@ -3,7 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatalities.csv"
   },
-  "width": 650,
+  "width": 550,
   "height": 300,
   "transform": [
     {"filter": "datum.Gender !== 'Unknown' & datum.Age !== 'Unknown'"}
@@ -17,7 +17,7 @@
       "encoding": {
         "x": {"field": "Age", "type": "quantitative", "scale": {"domain": [0, 100]}},
         "y": {"aggregate": "count", "type": "quantitative", "stack": true, "title": "Fatalities"},
-        "color": {"field": "Gender", "type": "nominal", "scale": {"range": ["#F37748", "#067BC2"]}}
+        "color": {"field": "Gender", "type": "nominal", "scale": {"range": ["#773885", "#4D9F5A"]}}
       }
     },
     {
@@ -49,4 +49,3 @@
     }
   ]
 }
-
