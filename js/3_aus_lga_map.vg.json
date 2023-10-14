@@ -74,7 +74,7 @@
           },
           {"field": "FatalityRate", "type": "quantitative", "format": ".2f", "title": "Fatality Rate"},
           {"field": "Fatalities", "type": "quantitative"},
-          {"field": "Population", "type": "quantitative"},
+          {"field": "Population", "type": "quantitative", "format": ","},
           {"field": "Year", "type": "quantitative", "title": "Year"}
         ]
       },
