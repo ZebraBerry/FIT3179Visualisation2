@@ -13,6 +13,17 @@
         ],
         "name": "Year: "
       }
+    },
+        {
+      "name": "Max",
+      "value": 1500,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 1500,
+        "step": 10,
+        "name": "Maximum Fatality Rate: "
+      }
     }
   ],
   
@@ -26,8 +37,8 @@
       "mark": {
         "type": "geoshape",
         "fill": "lightgray",
-        "stroke": "black",
-        "strokeWidth": 0.1
+        "stroke": "white",
+        "strokeWidth": 0.5
       },
       "encoding": {"tooltip": {"field": "note"}},
       "projection": {
@@ -50,9 +61,10 @@
       "encoding": {
         "shape": {"field": "geo", "type": "geojson"},
         "color": {
-          "field": "Fatality Rate",
+          "field": "FatalityRate",
           "type": "quantitative",
-          "scale": {"scheme": "purples"}
+          "scale": {"scheme": "greens"},
+          "title": "Fatality Rate"
         },
         "tooltip": [
           {
@@ -60,7 +72,7 @@
             "type": "nominal",
             "title": "LGA"
           },
-          {"field": "Fatality Rate", "type": "quantitative", "format": ".2f"},
+          {"field": "FatalityRate", "type": "quantitative", "format": ".2f", "title": "Fatality Rate"},
           {"field": "Fatalities", "type": "quantitative"},
           {"field": "Population", "type": "quantitative"},
           {"field": "Year", "type": "quantitative", "title": "Year"}
@@ -70,13 +82,14 @@
         "type": "conicEqualArea",
 
                 "parallels": [-16, -37],
-        "rotate": [-134, 0, 0],
+        "rotate": [-134, 0, 0]
       },
       "transform": [
         {
           "lookup": "National LGA Name 2021",
           "from": {
             "data": {
+              
               "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/map/Australia_V2.json",
               "format": {"type": "topojson", "feature": "LGA_2023_AUST_GDA2020"}
             },
@@ -84,7 +97,7 @@
           },
           "as": "geo"
         },
-        {"filter": "datum.Year == YearSelection"}
+        {"filter": "datum.Year == YearSelection & datum.FatalityRate < Max"}
         
       ]
     }
