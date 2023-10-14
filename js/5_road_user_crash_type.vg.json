@@ -8,7 +8,7 @@
   },
   "mark": "bar",
   "encoding": {
-    "x": {"aggregate": "count", "title": "Fatalities", "scale":{"domain": [0,4500], ""}},
+    "x": {"aggregate": "count", "title": "Fatalities", "scale":{"domain": [0,4500]}},
     "y": {
       "field": "Road User",
       "sort": [
