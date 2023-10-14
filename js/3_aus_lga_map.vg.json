@@ -1,20 +1,48 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "height": 1000,
-  "width": 1200,
+  "width": 550,
+  "height":500,
   "params": [
     {
-      "name": "Year_selection",
-      "value": 2015,
+      "name": "YearSelection",
+      "value": ["All"],
+      "bind": {
+        "input": "select",
+        "options": [
+          "All", "2015", "2016", "2017", "2018", "2019", "2020","2021", "2022"
+        ],
+        "name": "Year: "
+      }
+    },
+        {
+      "name": "Location",
+      "value": [135, -28],
+      "bind": {
+        "input": "select",
+        "options": [
+          [135, -36],
+          [144.3, -38.1],
+          [144.9, -36.7],
+          [147.1, -38.1]
+        ],
+        "labels": ["Australia", "Melbourne", "Sydney", "Brisbane", "Hobart", "Adelaide", "Perth", "Darwin"],
+        "name": "Location: "
+      }
+    },
+        {
+      "name": "zoom_level",
+      "value": 700,
       "bind": {
         "input": "range",
-        "min": 2015,
-        "max": 2022,
-        "step": 1,
-        "name": "Year:  "
+        "min": 1000,
+        "max": 60000,
+        "step": 100,
+        "name": "Zoom: "
       }
     }
   ],
+  
+
   "layer": [
     {
       "data": {
@@ -28,14 +56,14 @@
         "strokeWidth": 0.1
       },
       "encoding": {"tooltip": {"field": "note"}},
-      "projection": {
-        "parallels": [-16, -37],
-        "rotate": [-134, 0, 0],
-        "type": "conicEqualArea"
-      },
+  "projection": {
+    "type": "equirectangular",
+    "center": {"expr": "Location"},
+    "scale": {"expr": "zoom_level"}
+  },
       "transform": [
         {
-          "calculate": "'No Fatalites or No Data for ' + datum.properties.LGA_NAME23",
+          "calculate": "'No information for ' + datum.properties.LGA_NAME23",
           "as": "note"
         }
       ]
@@ -50,7 +78,7 @@
         "color": {
           "field": "Fatality Rate",
           "type": "quantitative",
-          "scale": {"scheme": "reds"}
+          "scale": {"scheme": "purples", "domainMax": 1600}
         },
         "tooltip": [
           {
@@ -58,15 +86,17 @@
             "type": "nominal",
             "title": "LGA"
           },
-          {"field": "Fatality Rate", "type": "quantitative"},
+          {"field": "Fatality Rate", "type": "quantitative", "format": ".2f"},
+          {"field": "Fatalities", "type": "quantitative"},
+          {"field": "Population", "type": "quantitative"},
           {"field": "Year", "type": "quantitative", "title": "Year"}
         ]
       },
-      "projection": {
-        "parallels": [-16, -37],
-        "rotate": [-134, 0, 0],
-        "type": "conicEqualArea"
-      },
+  "projection": {
+    "type": "equirectangular",
+    "center": {"expr": "Location"},
+    "scale": {"expr": "zoom_level"}
+  },
       "transform": [
         {
           "lookup": "National LGA Name 2021",
@@ -79,9 +109,10 @@
           },
           "as": "geo"
         },
-        {"filter": "datum.Year == Year_selection"}
+        {"filter": "datum.Year == YearSelection"}
+        
       ]
     }
   ],
-  "config": {}
+  "config": {},
 }
