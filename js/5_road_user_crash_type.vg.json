@@ -1,3 +1,4 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A trellis bar chart showing the US population distribution of age groups and gender in 2000.",
@@ -22,7 +23,7 @@
     "color": {
       "field": "Crash Type",
       "sort": ["Single", "Multiple"],
-      "scale": {"range": ["#773885", "#4D9F5A"]},
+      "scale": {"range": ["#5399C6", "#EFA449"]},
       "title": "Crash Fatalities"
     },
     "tooltip": [
