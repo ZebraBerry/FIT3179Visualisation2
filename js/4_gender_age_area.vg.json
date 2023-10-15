@@ -4,7 +4,7 @@
     "url": "https://raw.githubusercontent.com/ssmi0026/FIT3179Visualisation2/main/data/fatalities.csv"
   },
   "width": 320,
-  "height": 280,
+  "height": 320,
   "transform": [
     {"filter": "datum.Gender !== 'Unknown' & datum.Age !== 'Unknown'"}
   ],
