@@ -27,7 +27,7 @@
           "field": "State",
           "type": "nominal",
           "scale": {
-            "scheme": "purplegreen",
+            "scheme": "blueorange",
             "domain": ["NSW & ACT", "NT", "Qld", "SA", "Tas", "Vic", "WA"]
           }
         },
