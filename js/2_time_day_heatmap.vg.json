@@ -18,7 +18,7 @@
       "field": "Fatalities",
       "type": "quantitative",
       "title": "Fatalities",
-      "scale": {"scheme": "purplegreen"}
+      "scale": {"scheme": "blueorange"}
     },
     "y": {
       "field": "Day",
